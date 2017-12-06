@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'is-todos-header',
@@ -6,17 +6,15 @@ import { Component, OnInit } from '@angular/core';
     <header class="header">
       <h1>todos</h1>
       <input class="new-todo"
+             (keydown.enter)="itemAdd.emit($event.target.value)"
              placeholder="What needs to be done?"
              autofocus>
     </header>
   `,
   styles: []
 })
-export class TodosHeaderComponent implements OnInit {
+export class TodosHeaderComponent  {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  @Output() itemAdd = new EventEmitter();
 
 }
