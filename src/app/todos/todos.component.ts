@@ -12,15 +12,12 @@ import {TodosService} from './services/todos.service';
     </section>
   `
 })
-export class TodosComponent implements OnInit {
+export class TodosComponent {
 
   public list: TodosService;
 
   constructor(list: TodosService) {
       this.list = list;
-  }
-
-  ngOnInit() {
   }
 
 }

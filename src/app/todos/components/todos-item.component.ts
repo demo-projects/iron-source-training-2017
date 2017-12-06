@@ -5,12 +5,12 @@ import {Item} from '../types/item';
 @Component({
   selector: 'is-todos-item',
   template: `
-    <li>
+    <li [ngClass]="{ editing: flag, completed: item.completed }">
       <div class="view">
         <input class="toggle"
                [checked]="item.completed"
                type="checkbox">
-        <label>{{ item.title | isLow:'!!' }} created: {{ item.created | date }}</label>
+        <label (dblclick)="flag = true">{{ item.title | isLow:'!!' }} created: {{ item.created | date }}</label>
         <button class="destroy"></button>
       </div>
       <input class="edit">
@@ -21,4 +21,5 @@ import {Item} from '../types/item';
 export class TodosItemComponent  {
 
   @Input() item: Item;
+
 }

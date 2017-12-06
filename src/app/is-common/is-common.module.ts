@@ -1,12 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IsLowPipe } from './is-low.pipe';
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {IsLowPipe} from './is-low.pipe';
+import {LoggerService} from './logger.service';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
+  imports     : [CommonModule],
+  providers   : [LoggerService],
   declarations: [IsLowPipe],
-  exports: [IsLowPipe],
+  exports     : [IsLowPipe],
 })
-export class IsCommonModule { }
+export class IsCommonModule {
+
+  constructor(logger: LoggerService) {
+    logger.setConsoleType(LoggerService.LOG);
+  }
+}

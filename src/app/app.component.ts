@@ -4,8 +4,7 @@ import {TodosService} from './todos/services/todos.service';
 @Component({
   selector: 'is-root',
   template: `      
-    <is-todos></is-todos>  
-    <is-todos></is-todos>  
+    <is-todos></is-todos>
   `,
   styles: []
 })
