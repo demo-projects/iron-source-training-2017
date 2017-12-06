@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
-import {TodosService} from './todos/services/todos.service';
 
 @Component({
   selector: 'is-root',
   template: `      
-    <is-todos></is-todos>
+    <a routerLink="/">login</a>
+    <a routerLink="list">list</a>
+    <a routerLink="history">history</a>
+    
+    <router-outlet></router-outlet>
   `,
   styles: []
 })
 export class AppComponent {
-  constructor(list: TodosService) {
 
-  }
 }
